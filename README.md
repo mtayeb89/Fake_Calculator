@@ -14,7 +14,7 @@ This Python script demonstrates a basic **Trojan Horse (Trojan)** technique. It 
 - Hidden data gathering
 - Easy to understand for beginners in cybersecurity
 
-### 📂 How It Works
+### 📂 How It Works!!!
 
 1. User runs the script.
 2. It first executes a hidden function that collects system info.
